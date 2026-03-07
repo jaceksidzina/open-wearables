@@ -1,0 +1,785 @@
+# Instincts generated from https://github.com/jaceksidzina/open-wearables
+# Generated: 2026-03-07T19:10:32.347Z
+# Version: 2.0
+
+---
+id: open-wearables-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-wearables
+---
+
+# Open Wearables Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: feat, fix, docs, chore, refactor
+
+## Evidence
+
+- 200 commits analyzed
+- Detected conventional commit pattern
+- Examples: docs: update Apple Health coverage matrix to reflect current implementation (#565), fix(docs): use YouTube embed URL instead of share URL in iframe (#562)
+
+---
+id: open-wearables-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-wearables
+---
+
+# Open Wearables Commit Length
+
+## Action
+
+Write moderate-length commit messages (~50 characters)
+
+## Evidence
+
+- Average commit message length: 61 chars
+- Based on 200 commits
+
+---
+id: open-wearables-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-wearables
+---
+
+# Open Wearables Naming Files
+
+## Action
+
+Use snake_case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: snake_case
+
+---
+id: open-wearables-import-alias
+trigger: "when importing modules"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-wearables
+---
+
+# Open Wearables Import Alias
+
+## Action
+
+Use path aliases (@/, ~/) instead of relative imports
+
+## Evidence
+
+- Import analysis shows alias pattern
+- Example: import { x } from '@/lib/x'
+
+---
+id: open-wearables-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-wearables
+---
+
+# Open Wearables Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: open-wearables-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-wearables
+---
+
+# Open Wearables Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: 
+
+---
+id: open-wearables-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-wearables
+---
+
+# Open Wearables Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: open-wearables-workflow-database-migration
+trigger: "when modifying the database schema or adding tables"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-wearables
+---
+
+# Open Wearables Workflow Database Migration
+
+## Action
+
+Follow the database-migration workflow:
+1. Create migration file
+2. Update schema definitions
+3. Generate/update types
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: **/schema.*, **/types.ts
+
+---
+id: open-wearables-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-wearables
+---
+
+# Open Wearables Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~16x per month
+- Files: frontend/src/components/user/*, frontend/src/lib/api/*, frontend/src/hooks/api/*
+
+---
+id: open-wearables-workflow-refactoring
+trigger: "when refactoring code"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-wearables
+---
+
+# Open Wearables Workflow Refactoring
+
+## Action
+
+Follow the refactoring workflow:
+1. Ensure tests pass before refactor
+2. Refactor code structure
+3. Verify tests still pass
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/**/*
+
+---
+id: open-wearables-workflow-documentation-update
+trigger: "when doing documentation update"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-wearables
+---
+
+# Open Wearables Workflow Documentation Update
+
+## Action
+
+Follow the documentation-update workflow:
+1. Identify documentation that needs updating
+2. Update .mdx files with new content
+3. Update docs.json if adding new pages
+4. Commit with 'docs:' prefix
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~15x per month
+- Files: docs/**/*.mdx, docs/docs.json, README.md
+
+---
+id: open-wearables-workflow-provider-integration-fix
+trigger: "when doing provider integration fix"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-wearables
+---
+
+# Open Wearables Workflow Provider Integration Fix
+
+## Action
+
+Follow the provider-integration-fix workflow:
+1. Update provider service files
+2. Modify webhook handlers if needed
+3. Update tests for the provider
+4. Add structured logging
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~8x per month
+- Files: backend/app/services/providers/{provider}/**/*.py, backend/app/api/routes/v1/{provider}_webhooks.py, backend/tests/**/{provider}*.py
+
+---
+id: open-wearables-workflow-backend-service-enhancement
+trigger: "when doing backend service enhancement"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-wearables
+---
+
+# Open Wearables Workflow Backend Service Enhancement
+
+## Action
+
+Follow the backend-service-enhancement workflow:
+1. Update service files in backend/app/services/
+2. Modify Celery tasks if needed
+3. Update related schemas
+4. Add or update tests
+5. Add structured logging
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~10x per month
+- Files: backend/app/services/**/*.py, backend/app/integrations/celery/tasks/*.py, backend/app/schemas/*.py
+
+---
+id: open-wearables-workflow-coverage-matrix-update
+trigger: "when doing coverage matrix update"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-wearables
+---
+
+# Open Wearables Workflow Coverage Matrix Update
+
+## Action
+
+Follow the coverage-matrix-update workflow:
+1. Review actual provider implementation
+2. Update coverage.mdx with current support matrix
+3. Ensure documentation matches code reality
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: docs/providers/coverage.mdx
+
+---
+id: open-wearables-workflow-sdk-documentation-update
+trigger: "when doing sdk documentation update"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-wearables
+---
+
+# Open Wearables Workflow Sdk Documentation Update
+
+## Action
+
+Follow the sdk-documentation-update workflow:
+1. Update SDK-specific .mdx files
+2. Add new integration examples
+3. Update troubleshooting guides
+4. Update main SDK index if needed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: docs/sdk/**/*.mdx, docs/docs.json
+
+---
+id: open-wearables-workflow-frontend-ui-enhancement
+trigger: "when doing frontend ui enhancement"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-wearables
+---
+
+# Open Wearables Workflow Frontend Ui Enhancement
+
+## Action
+
+Follow the frontend-ui-enhancement workflow:
+1. Update React components
+2. Modify TypeScript types if needed
+3. Update hooks or services
+4. Test UI changes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: frontend/src/components/**/*.tsx, frontend/src/lib/api/types.ts, frontend/src/hooks/**/*.ts
+
+---
+id: open-wearables-workflow-apple-health-integration-update
+trigger: "when doing apple health integration update"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/open-wearables
+---
+
+# Open Wearables Workflow Apple Health Integration Update
+
+## Action
+
+Follow the apple-health-integration-update workflow:
+1. Update Apple Health schemas
+2. Modify import service logic
+3. Update constants for new data types
+4. Update tests
+5. Add structured logging
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: backend/app/schemas/apple/**/*.py, backend/app/services/apple/**/*.py, backend/app/constants/**/*.py
+
+---
+id: open-wearables-conventional-commits
+trigger: "When committing code"
+confidence: 0.95
+domain: git
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Conventional Commits
+
+## Action
+
+Use conventional commit format with prefixes: feat, fix, docs, chore, refactor
+
+## Evidence
+
+- All 8 commit examples follow conventional format
+- Consistent use of feat:, fix:, docs:, chore:, refactor: prefixes
+
+---
+id: open-wearables-commit-length
+trigger: "When writing commit messages"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Commit Length
+
+## Action
+
+Keep commit messages around 61 characters average length
+
+## Evidence
+
+- Average commit length is 61 characters across examples
+
+---
+id: open-wearables-pr-references
+trigger: "When committing merged PR changes"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Pr References
+
+## Action
+
+Include PR reference number in format (#XXX) at end of commit message
+
+## Evidence
+
+- All commit examples include PR references like (#565), (#562), (#533)
+
+---
+id: open-wearables-file-naming
+trigger: "When creating Python files"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables File Naming
+
+## Action
+
+Use snake_case for file names
+
+## Evidence
+
+- Naming conventions specify snake_case for files
+- Python is primary language
+
+---
+id: open-wearables-function-naming
+trigger: "When defining functions"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Code style patterns show camelCase for functions
+
+---
+id: open-wearables-class-naming
+trigger: "When defining classes"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Code style patterns show PascalCase for classes
+
+---
+id: open-wearables-constants-naming
+trigger: "When defining constants"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Constants Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constants
+
+## Evidence
+
+- Code style patterns show SCREAMING_SNAKE_CASE for constants
+
+---
+id: open-wearables-import-style
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Import Style
+
+## Action
+
+Use alias import style
+
+## Evidence
+
+- Import style specified as 'alias' in codeStyle patterns
+
+---
+id: open-wearables-export-style
+trigger: "When exporting from modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Export style specified as 'named' in codeStyle patterns
+
+---
+id: open-wearables-test-location
+trigger: "When creating tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Test Location
+
+## Action
+
+Place tests in separate test directories, not alongside source files
+
+## Evidence
+
+- Architecture shows testLocation: 'separate'
+- backend/tests/ structure in workflows
+
+---
+id: open-wearables-provider-test-naming
+trigger: "When testing provider integrations"
+confidence: 0.75
+domain: testing
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Provider Test Naming
+
+## Action
+
+Name test files with provider name pattern like *{provider}*.py
+
+## Evidence
+
+- Provider integration workflow shows backend/tests/**/{provider}*.py pattern
+
+---
+id: open-wearables-docs-update-workflow
+trigger: "When documentation needs updating"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Docs Update Workflow
+
+## Action
+
+Update .mdx files in docs/ directory and update docs.json if adding new pages
+
+## Evidence
+
+- Documentation update workflow occurs ~15x/month
+- Consistent pattern in docs/**/*.mdx files
+
+---
+id: open-wearables-provider-fix-workflow
+trigger: "When provider integration has issues"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Provider Fix Workflow
+
+## Action
+
+Update provider service files, modify webhook handlers, update tests, and add structured logging
+
+## Evidence
+
+- Provider integration fix workflow occurs ~8x/month
+- Consistent pattern in backend/app/services/providers/ files
+
+---
+id: open-wearables-backend-enhancement-workflow
+trigger: "When enhancing backend functionality"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Backend Enhancement Workflow
+
+## Action
+
+Update service files, modify Celery tasks if needed, update schemas, add tests, and add structured logging
+
+## Evidence
+
+- Backend service enhancement workflow occurs ~10x/month
+- Pattern involves backend/app/services/, schemas, and Celery tasks
+
+---
+id: open-wearables-coverage-matrix-workflow
+trigger: "When provider data type support changes"
+confidence: 0.92
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Coverage Matrix Workflow
+
+## Action
+
+Update docs/providers/coverage.mdx to reflect actual implementation
+
+## Evidence
+
+- Coverage matrix update workflow occurs ~3x/month
+- Specific focus on docs/providers/coverage.mdx
+
+---
+id: open-wearables-sdk-docs-workflow
+trigger: "When mobile SDK documentation needs updates"
+confidence: 0.87
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Sdk Docs Workflow
+
+## Action
+
+Update SDK-specific .mdx files, add integration examples, and update troubleshooting guides
+
+## Evidence
+
+- SDK documentation workflow occurs ~4x/month
+- Pattern in docs/sdk/**/*.mdx files
+
+---
+id: open-wearables-frontend-enhancement-workflow
+trigger: "When enhancing frontend UI"
+confidence: 0.83
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Frontend Enhancement Workflow
+
+## Action
+
+Update React components, modify TypeScript types, update hooks or services
+
+## Evidence
+
+- Frontend UI enhancement workflow occurs ~4x/month
+- Pattern in frontend/src/components/**/*.tsx files
+
+---
+id: open-wearables-apple-health-workflow
+trigger: "When Apple Health data handling needs improvements"
+confidence: 0.89
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Apple Health Workflow
+
+## Action
+
+Update Apple Health schemas, modify import service logic, update constants, update tests, add structured logging
+
+## Evidence
+
+- Apple Health integration workflow occurs ~3x/month
+- Pattern in backend/app/schemas/apple/ and backend/app/services/apple/ files
+
+---
+id: open-wearables-structured-logging
+trigger: "When making backend changes"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Structured Logging
+
+## Action
+
+Add structured logging to new or modified backend services
+
+## Evidence
+
+- Multiple workflows mention 'Add structured logging'
+- Refactoring workflow example shows logging updates across repo
+
+---
+id: open-wearables-type-based-organization
+trigger: "When organizing code modules"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: jaceksidzina/open-wearables
+---
+
+# Open Wearables Type Based Organization
+
+## Action
+
+Organize modules by type (backend/, frontend/, docs/, mcp/) rather than by feature
+
+## Evidence
+
+- Architecture shows moduleOrganization: 'type-based'
+- Folder structure shows backend, frontend, docs, mcp separation
+
